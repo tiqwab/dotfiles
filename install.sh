@@ -13,9 +13,13 @@ pushd ~/dotfiles > /dev/null
 # Create symbolic links for each dot file in the root directory.
 for file in .*
 do
+    if [ -d $file ] ; then
+        continue
+    fi
     if echo $IGNORE_DOTS | tr " " "\n" | grep -q -e "^$file$"; then
         continue
     fi
+
     echo "link ~/dotfiles/$file to ~/$file"
     ln -sf ~/dotfiles/$file ~/$file
 done
