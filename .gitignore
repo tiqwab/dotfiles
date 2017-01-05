@@ -1,2 +1,9 @@
+# for vim
+.vim/bundle/
+.vim/.netrwhist
+
+# for mac
 .DS_Store
+
+# for memo
 memo.md

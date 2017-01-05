@@ -10,18 +10,18 @@ echo "=================="
 
 pushd ~/dotfiles > /dev/null
 
-# Create symbolic links for each dot file in the root directory.
+# Create symbolic links for each dot file and directories in the root directory.
 for file in .*
 do
-    if [ -d $file ] ; then
-        continue
-    fi
+    # if [ -d $file ] ; then
+    #     continue
+    # fi
     if echo $IGNORE_DOTS | tr " " "\n" | grep -q -e "^$file$"; then
         continue
     fi
 
     echo "link ~/dotfiles/$file to ~/$file"
-    ln -sf ~/dotfiles/$file ~/$file
+    # ln -sf ~/dotfiles/$file ~/$file
 done
 
 popd > /dev/null
