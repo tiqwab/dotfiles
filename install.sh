@@ -16,6 +16,7 @@ do
     if echo $IGNORE_DOTS | tr " " "\n" | grep -q -e "^$file$"; then
         continue
     fi
+    echo "link ~/dotfiles/$file to ~/$file"
     ln -sf ~/dotfiles/$file ~/$file
 done
 
