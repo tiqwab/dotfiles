@@ -21,7 +21,7 @@ do
     fi
 
     echo "link ~/dotfiles/$file to ~/$file"
-    # ln -sf ~/dotfiles/$file ~/$file
+    ln -sf ~/dotfiles/$file ~/$file
 done
 
 popd > /dev/null
