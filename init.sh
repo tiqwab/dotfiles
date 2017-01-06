@@ -9,4 +9,4 @@ curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.s
 sh /var/tmp/install_neobundle.sh
 
 # For Python
-pip install jedi
+pip install jedi --user
