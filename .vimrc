@@ -37,7 +37,7 @@ runtime! settings/base/map.vim
 " Syntax
 syntax enable " Enable syntax highlighting
 set background=dark
-colorscheme solarized
+silent! colorscheme solarized
 let g:solarized_termcolors=256
 " syntax on " Set default of syntax highlighting
 
