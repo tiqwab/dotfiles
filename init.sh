@@ -10,3 +10,6 @@ sh /var/tmp/install_neobundle.sh
 
 # For Python
 pip install jedi --user
+
+# For Haskell
+stack install ghc-mod hlint hasktags codex hscope stylish-haskel
