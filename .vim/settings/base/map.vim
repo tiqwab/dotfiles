@@ -24,3 +24,6 @@ nnoremap <F8> :TagbarToggle<CR>
 inoremap <silent> <Esc> <Esc>
 inoremap <silent> <C-[> <Esc>
 inoremap <silent> <C-j> <C-^>
+
+" fcitx
+inoremap <silent> <C-j> <c-r>=IMState('FixMode')<CR>
