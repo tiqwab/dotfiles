@@ -12,4 +12,4 @@ sh /var/tmp/install_neobundle.sh
 pip install jedi --user
 
 # For Haskell
-stack install ghc-mod hlint hasktags codex hscope stylish-haskel
+stack install ghc-mod hlint hasktags codex hscope stylish-haskell
