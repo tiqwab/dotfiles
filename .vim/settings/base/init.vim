@@ -25,7 +25,7 @@ set noswapfile " Do not create swap files
 
 " Display
 set list " Display invisible characters
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:% " Characters for list settings
+set listchars=tab:»-,trail:-,eol:¬,extends:»,precedes:«,nbsp:% " Characters for list settings
 set number " Show line number
 set ruler " Show the line and column number of the cursor position
 set wrap " Wrap long lines
