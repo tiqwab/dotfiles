@@ -37,9 +37,12 @@ runtime! settings/base/map.vim
 " Syntax
 syntax enable " Enable syntax highlighting
 set background=dark
-silent! colorscheme solarized
+" silent! colorscheme solarized
 " silent! colorscheme dracula
-let g:solarized_termcolors=256
+" silent! colorscheme hybrid
+colorscheme hybrid
+" let g:solarized_termcolors=256
+let g:hybrid_custom_term_colors = 1
 " syntax on " Set default of syntax highlighting
 
 " Enable setting depending on filetype(e.g. *.py, *.hs)
