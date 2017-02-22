@@ -149,3 +149,26 @@ abbr        import ipdb..
 snippet     ipy
 abbr        import ipython..
 	from IPython import embed; embed()
+
+
+
+
+snippet     eq
+abbr        __eq__
+	def __eq__(self, other):
+		if type(self) == type(other):
+			return self.__dict__ == other.__dict__
+		return NotImplemented
+
+snippet     hash
+abbr        __hash__
+	def __hash__(self):
+		return hash(tuple(sorted(self.__dict__.items())))
+
+snippet     classe
+abbr        class Class(object): ...
+options     head
+	class ${1:#:name}(${2:#:object}):
+		def __init__(self, ${3}):
+ 			super().__init__(${4})
+			${0:pass}
