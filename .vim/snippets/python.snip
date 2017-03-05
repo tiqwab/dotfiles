@@ -165,10 +165,26 @@ abbr        __hash__
 	def __hash__(self):
 		return hash(tuple(sorted(self.__dict__.items())))
 
+snippet     str
+abbr        __str__
+	def __str__(self):
+		${0:pass}
+
+snippet     repr
+abbr        __repr__
+	def __repr__(self):
+		${0:pass}
+
 snippet     classe
 abbr        class Class(object): ...
 options     head
 	class ${1:#:name}(${2:#:object}):
 		def __init__(self, ${3}):
- 			super().__init__(${4})
+			super().__init__(${4})
 			${0:pass}
+
+snippet     classi
+abbr        class Class(namedtuple): ...
+options     head
+	class ${1:#:name}(namedtuple('$1', [${2}])):
+		__slots__ = ()
