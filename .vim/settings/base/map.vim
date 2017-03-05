@@ -5,6 +5,9 @@
 " mapleader defines what key is <Leader>.
 let mapleader = "\\"
 
+" To prevent yank when deleting character by 'x' key
+nnoremap x "_x
+
 " neocomplete
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
