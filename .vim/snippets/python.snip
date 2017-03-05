@@ -156,9 +156,9 @@ abbr        import ipython..
 snippet     eq
 abbr        __eq__
 	def __eq__(self, other):
-		if type(self) == type(other):
+		if isinstance(other, ${1}):
 			return self.__dict__ == other.__dict__
-		return NotImplemented
+		return False
 
 snippet     hash
 abbr        __hash__
