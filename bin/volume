@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Mute
+# pactl set-sink-mute 0 true
+
+# Unmute
+# pactl set-sink-mute 0 false
+
+# Volume up
+# pactl set-sink-volume 0 +5%
+
+# Volume down
+# pactl set-sink-volume 0 -5%
+
+# Toggle mute
+pactl set-sink-mute 0 toggle
