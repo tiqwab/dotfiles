@@ -45,5 +45,8 @@ colorscheme hybrid
 let g:hybrid_custom_term_colors = 1
 " syntax on " Set default of syntax highlighting
 
+" For xmonad
+set guiheadroom=0
+
 " Enable setting depending on filetype(e.g. *.py, *.hs)
 filetype plugin indent on 
