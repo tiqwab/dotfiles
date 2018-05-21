@@ -6,3 +6,5 @@ GIT_COMPLETION_BASH_PATH=/usr/share/git/completion/git-completion.bash
 if [ -f $GIT_COMPLETION_BASH_PATH ]; then
     source $GIT_COMPLETION_BASH_PATH
 fi
+
+export HISTCONTROL=ignorespace
