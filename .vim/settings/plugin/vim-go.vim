@@ -10,4 +10,5 @@ if ! empty(neobundle#get("vim-go"))
     let g:go_highlight_structs = 1
     autocmd FileType go :highlight goErr ctermfg=214
     autocmd FileType go :match goErr /\<err\>/
+    autocmd FileType go nmap <C-k> <Plug>(go-doc)
 endif
