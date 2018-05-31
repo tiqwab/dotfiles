@@ -46,6 +46,7 @@ set history=50 " Number of command history to be remembered
 set wildmenu " Enable command-line completion by pressing <Tab>
 set tags=tags;/,codex.tags;/
 set noerrorbells visualbell t_vb= "Suppress beep
+set completeopt=menuone
 
 " Extend '%' matching
 if !exists('g:loaded_matchit')
