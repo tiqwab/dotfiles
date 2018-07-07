@@ -10,3 +10,5 @@ if [ -f $GIT_COMPLETION_BASH_PATH ]; then
 fi
 
 export HISTCONTROL=ignorespace
+
+test -r ~/.bashrc && . ~/.bashrc
