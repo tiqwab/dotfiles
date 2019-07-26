@@ -1,5 +1,0 @@
-#!/bin/sh
-
-# Change Caps Lock to Ctrl
-setxkbmap -option ctrl:nocaps
-

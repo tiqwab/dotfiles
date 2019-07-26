@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Change Caps Lock to Ctrl
+setxkbmap -option ctrl:nocaps
+
+# Disable PgUp and PgDn
+xmodmap -e "keycode 112 ="
+xmodmap -e "keycode 117 ="
