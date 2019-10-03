@@ -15,5 +15,5 @@ alias cp='cp -i'
 # compile one file with common flags
 # ref. https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
 function cco() {
-    cc -Wall -Wextra -std=c11 -o "${1%%.*}" $1
+    cc -Wall -Wextra -std=c11 -o "${1%%.*}" $CFLAGS $1
 }
