@@ -17,3 +17,7 @@ alias cp='cp -i'
 function cco() {
     cc -Wall -Wextra -std=c11 -o "${1%%.*}" $CFLAGS $1
 }
+
+function cpo() {
+    c++ -Wall -Wextra -std=c++14 -o "${1%%.*}" $CFLAGS $1
+}
