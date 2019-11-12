@@ -7,6 +7,12 @@ options     head
 
 	#define min(a, b) ((a) < (b)) ? (a) : (b)
 	#define max(a, b) ((a) > (b)) ? (a) : (b)
+	#define swap(a, b, typ) \
+		do { \
+			typ tmp = a; \
+			a = b; \
+			b = tmp; \
+		} while (0)
 
 	int main(void) {
 		${0:pass}
