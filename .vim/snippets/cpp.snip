@@ -29,3 +29,50 @@ options     head
 		${0}
 		return 0;
 	}
+
+snippet     unionfind
+abbr        class unionfind { ...
+options     head
+	/*
+	 * ref. https://www.slideshare.net/chokudai/union-find-49066733
+	 */
+	class unionfind {
+		vector<int> par, rank;
+	
+	public:
+		void init(int n) {
+			par.resize(n);
+			rank.resize(n);
+	
+			for (int i = 0; i < n; i++) {
+				par[i] = i;
+				rank[i] = 0;
+			}
+		}
+	
+		int find(int x) {
+			if (par[x] == x) return x;
+			else return par[x] = find(par[x]);
+		}
+	
+		void unite(int x, int y) {
+			x = find(x);
+			y = find(y);
+			if (x == y) return ;
+	
+			if (rank[x] < rank[y]) par[x] = y;
+			else {
+				par[y] = x;
+				if (rank[x] == rank[y]) ++rank[x];
+			}
+		}
+	};
+
+snippet     op_stream
+abbr        template<class T, class U> ostream& ...
+options     head
+	template<class T, class U>
+	ostream& operator<<(ostream& os, const pair<T, U>& p) {
+		os<<"("<<p.first<<","<<p.second<<")";
+		return os;
+	}
