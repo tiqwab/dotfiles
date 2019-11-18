@@ -76,3 +76,70 @@ options     head
 		os<<"("<<p.first<<","<<p.second<<")";
 		return os;
 	}
+
+snippet     swap
+abbr        #define swap(a, b, typ) ...
+options     head
+	#define swap(a, b, typ) \
+		do { \
+			typ tmp = a; \
+			a = b; \
+			b = tmp; \
+		} while (0)
+
+snippet     mint
+abbr        struct Mint { ...
+options     head
+	const int MOD = ${0:1e9+7};
+
+	/*
+	 * Class for mod calculation.
+	 *
+	 * Requires <algorithm>.
+	 */
+	struct Mint {
+		int val;
+		// ref. https://qiita.com/rintaromasuda/items/be6510090af04bad833d or ext_gcd snippet
+		Mint inv() const{
+			int tmp,a=val,b=MOD,x=1,y=0;
+			while(b)tmp=a/b,a-=tmp*b,swap(a,b),x-=tmp*y,swap(x,y);
+			return Mint(x);
+		}
+	public:
+		Mint():val(0){}
+		Mint(ll x){if((val=x%MOD)<0)val+=MOD;}
+		Mint pow(ll t){Mint res=1,b=*this; while(t){if(t&1)res*=b;b*=b;t>>=1;}return res;}
+		Mint& operator+=(const Mint& x){if((val+=x.val)>=MOD)val-=MOD;return *this;}
+		Mint& operator-=(const Mint& x){if((val+=MOD-x.val)>=MOD)val-=MOD; return *this;}
+		Mint& operator*=(const Mint& x){val=(ll)val*x.val%MOD; return *this;}
+		Mint& operator/=(const Mint& x){return *this*=x.inv();}
+		bool operator==(const Mint& x) const{return val==x.val;}
+		bool operator!=(const Mint& x) const{return val!=x.val;}
+		bool operator<(const Mint& x) const{return val<x.val;}
+		bool operator<=(const Mint& x) const{return val<=x.val;}
+		bool operator>(const Mint& x) const{return val>x.val;}
+		bool operator>=(const Mint& x) const{return val>=x.val;}
+		Mint operator+(const Mint& x) const{return Mint(*this)+=x;}
+		Mint operator-(const Mint& x) const{return Mint(*this)-=x;}
+		Mint operator*(const Mint& x) const{return Mint(*this)*=x;}
+		Mint operator/(const Mint& x) const{return Mint(*this)/=x;}
+	};
+
+snippet     ext_gcd
+abbr        ll ext_gcd(ll a, ll b, ll *x, ll *y) { ...
+options     head
+	/*
+	 * Return gcd(x, y).
+	 * x and y store values satisfying 'ax + by = gcd(a, b)'.
+	 * ref. https://qiita.com/drken/items/b97ff231e43bce50199a 
+	 */
+	ll ext_gcd(ll a, ll b, ll *x, ll *y) {
+		if (b == 0) {
+			*x = 1;
+			*y = 0;
+			return a;
+		}
+		ll d = ext_gcd(b, a % b, y, x);
+		*y = (*y) - a / b * (*x);
+		return d;
+	}
