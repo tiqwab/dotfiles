@@ -16,6 +16,6 @@ let g:watchdogs_check_BufWritePost_enables = {
 " Add new cmdopts if necessary.
 let g:quickrun_config = {
 \  "watchdogs_checker/rustc" : {
-     "cmdopt" : "",
+\    "cmdopt" : "",
 \  },
 \}
