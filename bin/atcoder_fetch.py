@@ -1,4 +1,6 @@
 import urllib.request
+import http.cookiejar
+import requests
 from html.parser import HTMLParser
 from html.entities import name2codepoint
 from pathlib import Path
@@ -47,12 +49,23 @@ if __name__ == '__main__':
     problem = p.name
     contest = p.parent.name
     # print(contest, problem)
-    url = 'https://atcoder.jp/contests/{}/tasks/{}_{}'.format(contest, contest, problem)
 
-    fp = urllib.request.urlopen(url)
-    html_bs = fp.read()
-    fp.close()
-    html_str = html_bs.decode('utf8')
+    # Prepared by atcoder-tools
+    session_path = Path('~/.local/share/atcoder-tools/cookie.txt').expanduser().resolve()
+    session = requests.Session()
+    session.cookies = http.cookiejar.LWPCookieJar(session_path)
+    session.cookies.load()
+    # FIXME: use a new url
+    url = 'https://{}.contest.atcoder.jp/tasks/{}_{}'.format(contest, contest, problem)
+    response = session.get(url)
+    html_str = response.text
+    # print(html_str)
+
+    # url = 'https://atcoder.jp/contests/{}/tasks/{}_{}'.format(contest, contest, problem)
+    # fp = urllib.request.urlopen(url)
+    # html_bs = fp.read()
+    # fp.close()
+    # html_str = html_bs.decode('utf8')
     # print(html_str)
 
     parser = AtCoderHTMLParser()
