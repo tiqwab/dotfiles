@@ -14,4 +14,31 @@ fi
 
 export HISTCONTROL=ignorespace
 
+# compile one file with common flags
+# ref. https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+function cco() {
+    cc -Wall -Wextra -std=c11 -o "${1%%.*}" $CFLAGS $1
+}
+
+function cpo() {
+    c++ -Wall -Wextra -std=c++14 -o "${1%%.*}" $CFLAGS $1
+}
+
+# For AtCoder
+function atc() {
+usage=$(cat <<EOF
+usage: atc <command>
+command should be 'fetch' or 'test'.
+EOF
+)
+
+    if [ "${1}" = "fetch" ]; then
+        python3 ~/dotfiles/bin/atcoder_fetch.py
+    elif [ "${1}" = "test" ]; then
+        ~/dotfiles/bin/atcoder_test.sh
+    else
+        echo -e "$usage" > /dev/stderr
+    fi
+}
+
 test -r ~/.bashrc && . ~/.bashrc
