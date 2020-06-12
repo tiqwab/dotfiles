@@ -20,6 +20,7 @@ class AtCoderHTMLParser(HTMLParser):
     def handle_starttag(self, tag, attrs):
         self.prev_tag = tag
 
+    # See https://github.com/kyuridenamida/atcoder-tools/blob/stable/atcodertools/client/models/problem_content.py
     def handle_data(self, data):
         if self.prev_tag == 'h3':
             if data.startswith('入力例'):
@@ -56,7 +57,9 @@ if __name__ == '__main__':
     session.cookies = http.cookiejar.LWPCookieJar(session_path)
     session.cookies.load()
     # FIXME: use a new url
-    url = 'https://{}.contest.atcoder.jp/tasks/{}_{}'.format(contest, contest, problem)
+    # TODO: check actual url in the problem list during contest
+    # url = 'https://{}.contest.atcoder.jp/tasks/{}_{}'.format(contest, contest, problem)
+    url = 'https://atcoder.jp/contests/{}/tasks/{}_{}'.format(contest, contest, problem)
     response = session.get(url)
     html_str = response.text
     # print(html_str)
