@@ -40,7 +40,11 @@ set background=dark
 " silent! colorscheme solarized
 " silent! colorscheme dracula
 " silent! colorscheme hybrid
+
+" use hybrid as colorscheme, but change color of line number
+autocmd ColorScheme * highlight LineNr ctermfg=240
 colorscheme hybrid
+
 " let g:solarized_termcolors=256
 let g:hybrid_custom_term_colors = 1
 " syntax on " Set default of syntax highlighting
