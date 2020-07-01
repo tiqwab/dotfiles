@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Set scale of the external display
+# ref. https://qiita.com/sathoshi-metal/items/7540b622d4616ae07a0c
+xrandr --output DP-1 --scale 2x2
