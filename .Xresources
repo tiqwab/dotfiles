@@ -33,8 +33,14 @@ URxvt.lineSpace:            0
 ! Fonts
 URxvt.allow_bold:           true
 /* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
-URxvt*font: xft:Ricty Discord:pixelsize=28:antialias=true
+URxvt*font: xft:Ricty Discord:pixelsize=28:antialias=true xft:IPAGothic
+! URxvt*font: xft:Ricty Discord:pixelsize=28:antialias=true
 ! URxvt*boldFont: xft:Monospace:pixelsize=14
+
+! ref. https://wiki.archlinux.jp/index.php/Rxvt-unicode#.E3.82.A4.E3.83.B3.E3.83.97.E3.83.83.E3.83.88.E3.83.A1.E3.82.BD.E3.83.83.E3.83.89.E3.81.AE.E3.82.A4.E3.83.B3.E3.83.A9.E3.82.A4.E3.83.B3.E8.A1.A8.E7.A4.BA
+! add a font to URxvt*font and xim-onthespot to URxvt.perl-ext-common too
+! URxvt.inputMethod: fcitx
+! URxvt.preeditType: OnTheSpot
 
 ! Fix font space
 URxvt*letterSpace: -1
@@ -44,7 +50,7 @@ URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 
 ! Perl extensions
-URxvt.perl-ext-common:      default,matcher,tabbed,selection-to-clipboard,keyboard-select
+URxvt.perl-ext-common:      default,matcher,tabbed,selection-to-clipboard,keyboard-select,xim-onthespot
 URxvt.matcher.button:       1
 URxvt.urlLauncher:          firefox
 
