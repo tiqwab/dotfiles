@@ -1,6 +1,7 @@
 export PATH=$(ruby -e "puts Gem.user_dir")/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # only execute if aws exists
 if [ -x "$(command -v aws)" ]; then
@@ -13,6 +14,10 @@ if [ -f $GIT_COMPLETION_BASH_PATH ]; then
 fi
 
 export HISTCONTROL=ignorespace
+
+# for RISC-V
+export RISCV=/opt/riscv
+export PATH="$PATH:$RISCV/bin"
 
 # compile one file with common flags
 # ref. https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
