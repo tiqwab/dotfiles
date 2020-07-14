@@ -50,12 +50,13 @@ URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 
 ! Perl extensions
-URxvt.perl-ext-common:      default,matcher,tabbed,selection-to-clipboard,keyboard-select,xim-onthespot
+URxvt.perl-ext-common:      default,matcher,xim-onthespot
+! URxvt.perl-ext-common:      default,matcher,tabbed,selection-to-clipboard,keyboard-select,xim-onthespot
 URxvt.matcher.button:       1
 URxvt.urlLauncher:          firefox
 
 ! keysym can be checked by xev
-URxvt.keysym.M-bracketleft: perl:keyboard-select:activate
+! URxvt.keysym.M-bracketleft: perl:keyboard-select:activate
 
 ! Cursor
 URxvt.cursorBlink:          true
