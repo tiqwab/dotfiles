@@ -52,3 +52,11 @@ set completeopt=menuone
 if !exists('g:loaded_matchit')
   runtime macros/matchit.vim
 endif
+
+" reload files automatically edited by other than vim
+" ref. https://vim-jp.org/vim-users-jp/2011/03/12/Hack-206.html
+set autoread
+augroup vimrc-checktime
+    autocmd!
+    autocmd WinEnter * checktime
+augroup END
