@@ -2,4 +2,5 @@
 
 # Set scale of the external display
 # ref. https://qiita.com/sathoshi-metal/items/7540b622d4616ae07a0c
-xrandr --output DP-1 --scale 2x2
+# xrandr --output DP-1 --scale 2x2
+xrandr --output DP-2 --scale 1.3x1.3
