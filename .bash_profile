@@ -13,6 +13,11 @@ if [ -f $GIT_COMPLETION_BASH_PATH ]; then
     source $GIT_COMPLETION_BASH_PATH
 fi
 
+KUBECTL_COMPLETION_BASH_PATH=~/.kube/completion.bash.inc
+if [ -f $KUBECTL_COMPLETION_BASH_PATH ]; then
+    source $KUBECTL_COMPLETION_BASH_PATH
+fi
+
 export HISTCONTROL=ignorespace
 
 # for RISC-V
