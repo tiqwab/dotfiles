@@ -2,6 +2,7 @@ export PATH=$(ruby -e "puts Gem.user_dir")/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.poetry/bin"
 
 # only execute if aws exists
 if [ -x "$(command -v aws)" ]; then
@@ -18,11 +19,19 @@ if [ -f $KUBECTL_COMPLETION_BASH_PATH ]; then
     source $KUBECTL_COMPLETION_BASH_PATH
 fi
 
+POETRY_COMPLETION_BASH_PATH=~/.poetry/poetry.bash-completion
+if [ -f $POETRY_COMPLETION_BASH_PATH ]; then
+    source $POETRY_COMPLETION_BASH_PATH
+fi
+
 export HISTCONTROL=ignorespace
 
 # for RISC-V
 export RISCV=/opt/riscv
 export PATH="$PATH:$RISCV/bin"
+
+# for Pipenv
+export PIPENV_VENV_IN_PROJECT=true
 
 # compile one file with common flags
 # ref. https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
