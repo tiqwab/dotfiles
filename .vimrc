@@ -7,33 +7,6 @@
 " Set up basic configurations
 runtime! settings/base/init.vim
 
-" NeoBundle
-let s:noplugin = 1
-" let s:bundle_root = expand('~/.vim/bundle')
-" let s:neobundle_root = s:bundle_root . '/neobundle.vim'
-" if !isdirectory(s:neobundle_root) || v:version < 702
-"     " NeoBundleが存在しない、もしくはVimのバージョンが古い場合はプラグインを一切
-"     " 読み込まない
-"     let s:noplugin = 1
-" else
-"     " NeoBundleを'runtimepath'に追加し初期化を行う
-"     if has('vim_starting')
-"         execute "set runtimepath+=" . s:neobundle_root
-"     endif
-"     call neobundle#begin(s:bundle_root)
-" 
-"     " NeoBundle自身をNeoBundleで管理させる
-"     NeoBundleFetch 'Shougo/neobundle.vim'
-" 
-"     " Call plugins
-"     runtime! settings/plugin/*.vim
-" 
-"     " インストールされていないプラグインのチェックおよびダウンロード
-"     NeoBundleCheck
-" 
-"     call neobundle#end()
-" endif
-
 " Configure plugins
 " runtime! settings/plugin/*.vim
 " runtime! settings/plugin/ale.vim

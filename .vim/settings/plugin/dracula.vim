@@ -1,1 +1,0 @@
-NeoBundle 'dracula/vim'
