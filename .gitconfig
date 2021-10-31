@@ -3,6 +3,12 @@
     email = tiqwab.ch90@gmail.com
 [core]
     excludesfile = ~/.gitignore_global
+    quotePath = false
+    commitGraph = true
 [alias]
     # e.g. To fetch pull request number 2 of upstream: git fpr upstream 2
     fpr = "!f(){ git fetch $1 pull/$2/head:pr-$2; };f"
+[receive]
+    advertisePushOptions = true
+[gc]
+    writeCommitGraph = true
