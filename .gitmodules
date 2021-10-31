@@ -16,3 +16,6 @@
 [submodule ".vim/pack/mypackage/start/syntastic"]
 	path = .vim/pack/mypackage/start/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
+[submodule ".vim/pack/mypackage/start/vim-go"]
+	path = .vim/pack/mypackage/start/vim-go
+	url = https://github.com/fatih/vim-go.git
