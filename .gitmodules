@@ -1,0 +1,18 @@
+[submodule ".vim/pack/mypackage/start/vim-hybrid"]
+	path = .vim/pack/mypackage/start/vim-hybrid
+	url = https://github.com/w0ng/vim-hybrid.git
+[submodule ".vim/pack/mypackage/start/im_control.vim"]
+	path = .vim/pack/mypackage/start/im_control.vim
+	url = https://github.com/fuenor/im_control.vim.git
+[submodule ".vim/pack/mypackage/start/neosnippet.vim"]
+	path = .vim/pack/mypackage/start/neosnippet.vim
+	url = https://github.com/Shougo/neosnippet.vim
+[submodule ".vim/pack/mypackage/start/vim-snippets"]
+	path = .vim/pack/mypackage/start/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
+[submodule ".vim/pack/mypackage/start/rust.vim"]
+	path = .vim/pack/mypackage/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim.git
+[submodule ".vim/pack/mypackage/start/syntastic"]
+	path = .vim/pack/mypackage/start/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
