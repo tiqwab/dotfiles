@@ -19,3 +19,6 @@
 [submodule ".vim/pack/mypackage/start/vim-go"]
 	path = .vim/pack/mypackage/start/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule ".vim/pack/mypackage/start/vim-solidity"]
+	path = .vim/pack/mypackage/start/vim-solidity
+	url = https://github.com/tomlion/vim-solidity.git
