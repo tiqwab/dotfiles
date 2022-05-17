@@ -22,3 +22,6 @@
 [submodule ".vim/pack/mypackage/start/vim-solidity"]
 	path = .vim/pack/mypackage/start/vim-solidity
 	url = https://github.com/tomlion/vim-solidity.git
+[submodule ".vim/pack/mypackage/start/editorconfig-vim"]
+	path = .vim/pack/mypackage/start/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim
