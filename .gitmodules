@@ -25,3 +25,6 @@
 [submodule ".vim/pack/mypackage/start/editorconfig-vim"]
 	path = .vim/pack/mypackage/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim
+[submodule ".vim/pack/mypackage/start/vim-wayland-clipboard"]
+	path = .vim/pack/mypackage/start/vim-wayland-clipboard
+	url = https://github.com/jasonccox/vim-wayland-clipboard
