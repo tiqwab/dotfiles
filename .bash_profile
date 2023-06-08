@@ -1,8 +1,16 @@
-export PATH=$(ruby -e "puts Gem.user_dir")/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$PATH:$HOME/go/bin"
-export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$PATH:$HOME/.poetry/bin"
+if [ -x "command -v ruby" ]; then
+    export PATH=$(ruby -e "puts Gem.user_dir")/bin:$PATH
+fi
+if [ -x "command -v go" ]; then
+    export PATH="$PATH:$HOME/go/bin"
+fi
+if [ -x "command -v cargo" ]; then
+    export PATH="$PATH:$HOME/.cargo/bin"
+fi
+if [ -x "command -v poetry" ]; then
+    export PATH="$PATH:$HOME/.poetry/bin"
+fi
 
 # only execute if aws exists
 if [ -x "$(command -v aws)" ]; then
@@ -31,7 +39,9 @@ export RISCV=/opt/riscv
 export PATH="$PATH:$RISCV/bin"
 
 # for Pipenv
-export PIPENV_VENV_IN_PROJECT=true
+if [ -x "command -v pipenv" ]; then
+    export PIPENV_VENV_IN_PROJECT=true
+fi
 
 # compile one file with common flags
 # ref. https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
