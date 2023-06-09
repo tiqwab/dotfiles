@@ -6,7 +6,10 @@ if [ -x "command -v go" ]; then
     export PATH="$PATH:$HOME/go/bin"
 fi
 if [ -x "command -v cargo" ]; then
-    export PATH="$PATH:$HOME/.cargo/bin"
+    # export PATH="$PATH:$HOME/.cargo/bin"
+
+    # rustup appended the below setting, which currently does the same thing as above
+    . "$HOME/.cargo/env"
 fi
 if [ -x "command -v poetry" ]; then
     export PATH="$PATH:$HOME/.poetry/bin"
