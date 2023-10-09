@@ -1,11 +1,11 @@
 export PATH="$HOME/.local/bin:$PATH"
-if [ -x "command -v ruby" ]; then
+if [ -x "$(command -v ruby)" ]; then
     export PATH=$(ruby -e "puts Gem.user_dir")/bin:$PATH
 fi
-if [ -x "command -v go" ]; then
+if [ -x "$(command -v go)" ]; then
     export PATH="$PATH:$HOME/go/bin"
 fi
-if [ -x "command -v cargo" ]; then
+if [ -d "$HOME/.cargo" ]; then
     # export PATH="$PATH:$HOME/.cargo/bin"
 
     # rustup appended the below setting, which currently does the same thing as above
