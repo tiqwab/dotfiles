@@ -229,6 +229,9 @@ mode "$Pause-break" {
 }
 bindsym $mod+Pause mode "$Pause-break"
 
+# use kanshi insteadly
+# bindsym $mod+Shift+t exec swaymsg output eDP-1 toggle
+
 #
 # Status Bar:
 #
